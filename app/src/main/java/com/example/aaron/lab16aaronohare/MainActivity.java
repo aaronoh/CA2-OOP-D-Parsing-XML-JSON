@@ -27,6 +27,8 @@ public class MainActivity extends ListActivity {
     private TextView output;
     private ProgressBar pBar;
     private List<MyTask> myTasks;
+    private static final String PHOTOS_BASE_URL ="http://10.0.2.2/OOPDCA2/images/";
+
 
     ArrayList<News> newsList;
 
@@ -43,7 +45,7 @@ public class MainActivity extends ListActivity {
         myTasks = new ArrayList<>();
 
         MyTask task = new MyTask();
-        task.execute("http://10.0.2.2/myFeed.rss");
+        task.execute("http://10.0.2.2/OOPDCA2/myFeed.rss");
 
 
     }
@@ -53,19 +55,6 @@ public class MainActivity extends ListActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_do_task) {
-
-            MyTask task = new MyTask();
-            task.execute("http://10.0.2.2/myFeed.rss");
-
-            myTasks.add(task);
-        }
-        return false;
     }
 
     protected void updateDisplay() {
@@ -99,7 +88,7 @@ public class MainActivity extends ListActivity {
 
             for (News news : newsList){
                 try{
-                    String imageUrl = news.getEnlosureURL();
+                    String imageUrl = PHOTOS_BASE_URL + news.getEnlosureURL();
                     InputStream in = (InputStream) new URL(imageUrl).getContent();
                     Bitmap bitmap = BitmapFactory.decodeStream(in);
                     news.setBitmap(bitmap);
@@ -112,7 +101,7 @@ public class MainActivity extends ListActivity {
             }
             return newsList;
 
-        }
+         }
 
 //        protected void onProgressUpdate(String... strings) {
 //            super.onProgressUpdate(strings);
@@ -122,8 +111,6 @@ public class MainActivity extends ListActivity {
 //        }
 
         @Override
-
-
         protected void onPostExecute(ArrayList <News> news) {
             super.onPostExecute(news);
             //newsList = XMLParser.parseFeed(s);

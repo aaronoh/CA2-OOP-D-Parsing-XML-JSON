@@ -43,7 +43,7 @@ public class NewsAdapter extends ArrayAdapter<News> {
 
             // R.id.newsItemTextView is the textView in news_item.xml
             TextView tv = (TextView) view.findViewById(R.id.newsItemTextView);
-            tv.setText(news.getEnlosureURL());
+            tv.setText(news.getTitle());
 
             ImageView image = (ImageView) view.findViewById(R.id.newsItemImageView);
             image.setImageBitmap(news.getBitmap());
