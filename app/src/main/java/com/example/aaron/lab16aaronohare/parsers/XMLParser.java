@@ -20,9 +20,8 @@ public class XMLParser {
 
         try {
 
-            ///Vriables that you need to keep track paarse position
             boolean inTag = false;
-            //cuurent xml tag
+            //current xml tag
             String currentTagName = "";
             // the news object you are currently constructing from the XML
             News news = null;
@@ -32,19 +31,19 @@ public class XMLParser {
 
             XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
             XmlPullParser parser = factory.newPullParser();
-            // content is the complete XML content that was passed in from the calling program
+            // content =  xml content that was passed in
             parser.setInput(new StringReader(content));
 
             int eventType = parser.getEventType();
 
-            // XMLPullParser generates events. Once for each start tag, end tag and for text events
+            // XmlPullParser generates events for each start tag, end tag and text
             while (eventType != XmlPullParser.END_DOCUMENT) {
 
                 switch (eventType) {
                     case XmlPullParser.START_TAG:
                         currentTagName = parser.getName();
 
-                        // if starting a new product create a new Flower object to start building it up.
+                        // if starting a new item, create a new news object
                         if (currentTagName.equals("item")) {
                             inTag = true;
                             news = new News();
@@ -53,13 +52,13 @@ public class XMLParser {
                         break;
 
                     case XmlPullParser.END_TAG:
-                        // if leaving current product
+                        // if leaving current item
                         if (parser.getName().equals("item")) {
                             inTag = false;
                         }
                         currentTagName = "";
                         break;
-
+                    //prsing each tag
                     case XmlPullParser.TEXT:
                         if (inTag && news != null) {
                             switch (currentTagName) {
