@@ -5,13 +5,13 @@ import android.graphics.Bitmap;
 /**
  * Created by aaron on 22/02/2017.
  */
-
+//Plain old java objects class -pojo
 public class News {
     private String title;
     private String link;
     private String descreption;
     private String enlosureURL;
-
+//Getters and Setters
     private Bitmap bitmap;
 
     public Bitmap getBitmap(){

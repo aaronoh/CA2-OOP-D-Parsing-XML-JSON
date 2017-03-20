@@ -5,33 +5,47 @@
     density="420dpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="896947401402"
-    token="-6514053841150264199"
-    verifier="FULL_BUILD_REQUESTED" >
+    timestamp="13287652969692"
+    token="4782830471610513043"
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="2084" />
+        duration="893" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="58" />
     <task
         name="instant-run-transform"
-        duration="2913" />
+        duration="130" />
     <task
         name="verifier"
-        duration="153" />
+        duration="11" />
 
     <artifact
-        location="C:\Users\aaron\AndroidStudioProjects\Lab16AaronOHare\app\build\outputs\apk\app-debug.apk"
-        type="MAIN" />
+        location="C:\Users\aaron\AndroidStudioProjects\CA2-OOP-D-Parsing-XML-JSON\app\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
 
     <build
-        timestamp="896947401402"
+        timestamp="1294728083107"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\aaron\AndroidStudioProjects\Lab16AaronOHare\app\build\outputs\apk\app-debug.apk"
+            location="C:\Users\aaron\AndroidStudioProjects\CA2-OOP-D-Parsing-XML-JSON\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
+    </build>
+    <build
+        timestamp="9458206895889"
+        verifier="FIELD_REMOVED" >
+        <artifact
+            location="C:\Users\aaron\AndroidStudioProjects\CA2-OOP-D-Parsing-XML-JSON\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_6\classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="13287652969692"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\aaron\AndroidStudioProjects\CA2-OOP-D-Parsing-XML-JSON\app\build\intermediates\reload-dex\debug\classes.dex"
+            type="RELOAD_DEX" />
     </build>
 
 </instant-run>
